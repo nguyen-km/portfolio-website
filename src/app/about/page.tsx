@@ -7,8 +7,8 @@ export default function AboutPage() {
       <Navbar />
       <main className="max-w-3xl mx-auto px-4 py-8 space-y-8">
         <section>
-            <h1 className="text-3xl font-bold mb-4">Hi, I'm Kevin</h1>
-            <p className="text-lg">"I'm a data analyst at BBC Research & Consulting. I work at the intersection of analytics, equity, and public policy—developing MCMC models, availability estimation tools, and machine learning pipelines that drive real-world decisions."</p>
+            <h1 className="text-3xl font-bold mb-4">Hi, I&apos;m Kevin</h1>
+            <p className="text-lg">I&apos;m a data analyst at BBC Research & Consulting. I work at the intersection of analytics, equity, and public policy—developing MCMC models, availability estimation tools, and machine learning pipelines that drive real-world decisions.</p>
         </section>
 
         <section>

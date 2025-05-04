@@ -1,5 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function ClusteringGuide() {
   return (
@@ -32,10 +34,8 @@ export default function ClusteringGuide() {
           <p className="text-base">
             Partitional clustering divides a dataset into a predefined number of non-overlapping clusters. 
             Partitional clustering algorithms, such as K-means, require a specified number of clusters (or k) beforehand. 
-            The algorithm then iteratively assigns data points to their nearest cluster center based on a distance metric until convergence. 
-            Examples of possible distance metrics used in partitional clustering include Euclidean, Manhattan, and cosine similarity.
-            
-            K-Means is a centroid-based algorithm that partitions data into <em>k</em> clusters. It minimizes the sum of squared distances between data points and their cluster centroids.
+            The algorithm then iteratively assigns data points to their nearest cluster center (or <em>centroid</em>) by minimizing a pre-specified distance metric until convergence. 
+            Examples of possible distance metrics used in partitional clustering include Euclidean distance, Manhattan distance, and cosine similarity.
           </p>
           <h3 className="text-xl font-bold mt-4">How It Works</h3>
           <ol className="list-decimal list-inside space-y-2">
@@ -54,11 +54,35 @@ export default function ClusteringGuide() {
           <p className="text-sm text-gray-600">
             where <em>xᵢ</em> is a data point, <em>μⱼ</em> is the centroid of cluster <em>j</em>, and || || denotes the Euclidean distance.
           </p>
+          <h3 className="text-xl font-bold mt-4">Sample Python Code</h3>
+            <SyntaxHighlighter language="python" style={vscDarkPlus} className="rounded-lg">
+            {`from sklearn.cluster import KMeans
+import numpy as np
+
+# Sample data
+X = np.array([[1, 2], [1, 4], [1, 0],
+            [10, 2], [10, 4], [10, 0]])
+
+# Initialize KMeans with 2 clusters
+kmeans = KMeans(n_clusters=2, random_state=0)
+
+# Fit the model
+kmeans.fit(X)
+
+# Get cluster centers and labels
+print("Cluster Centers:", kmeans.cluster_centers_)
+print("Labels:", kmeans.labels_)`}
+            </SyntaxHighlighter>
         </section>
 
         <section id="hierarchical">
           <h2 className="text-2xl font-semibold mb-2">2. Hierarchical Clustering</h2>
           <p className="text-base">
+          Alternatively, hierarchical clustering creates a hierarchy of clusters. 
+          Hierarchical clustering is more flexible than partitional clustering because it doesn't require a specified number of 
+          clusters beforehand. It is, however, computationally expensive and not well suited for large datasets. While, partitional 
+          clustering algorithms assign outliers to the nearest cluster center, which may not represent their true identity, 
+          hierarchical clustering algorithms allow outliers to form single clusters, making the algorithm more robust to outliers.
             Hierarchical clustering builds a tree-like structure (dendrogram) to represent nested clusters. It can be agglomerative (bottom-up) or divisive (top-down).
           </p>
           <h3 className="text-xl font-bold mt-4">How It Works</h3>

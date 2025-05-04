@@ -1,11 +1,15 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+// import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function ClusteringGuide() {
   return (
     <>
+      {/* <Head>
+        <title>Clustering Guide | Kevin Nguyễn</title>
+      </Head> */}
       <Navbar />
       <div className="flex">
         {/* Sidebar */}

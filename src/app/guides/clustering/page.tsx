@@ -8,14 +8,33 @@ export default function ClusteringGuide() {
       <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
         <section>
           <h1 className="text-3xl font-bold mb-4">Clustering in Machine Learning</h1>
-          <p className="text-lg">
-            Clustering is an unsupervised learning technique used to group data points into clusters based on their similarity. It is widely used in applications like customer segmentation, anomaly detection, and image compression.
+          <p className="text-lg mb-4">
+            Clustering is an unsupervised learning method that groups similar data points based on their features.
+            Clustering algorithms aim to find natural groupings within a dataset without any prior knowledge of the class labels.
+            It is widely used in applications like customer segmentation, anomaly detection, and image compression. 
+            The three most common clustering algorithms are K-means, hierarchical clustering, and DBSCAN.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <a href="#k-means" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                Learn about K-Means
+            </a>
+            <a href="#hierarchical" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                Learn about Hierarchical
+            </a>
+            <a href="#dbscan" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                Learn about DBSCAN
+            </a>
+           </div>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">1. K-Means Clustering</h2>
+        <section id="k-means">
+          <h2 className="text-2xl font-semibold mb-2">1. Partitional Clustering (K-Means)</h2>
           <p className="text-base">
+            Partitional clustering divides a dataset into a predefined number of non-overlapping clusters. 
+            Partitional clustering algorithms, such as K-means, require a specified number of clusters (or k) beforehand. 
+            The algorithm then iteratively assigns data points to their nearest cluster center based on a distance metric until convergence. 
+            Examples of possible distance metrics used in partitional clustering include Euclidean, Manhattan, and cosine similarity.
+            
             K-Means is a centroid-based algorithm that partitions data into <em>k</em> clusters. It minimizes the sum of squared distances between data points and their cluster centroids.
           </p>
           <h3 className="text-xl font-bold mt-4">How It Works</h3>
@@ -37,7 +56,7 @@ export default function ClusteringGuide() {
           </p>
         </section>
 
-        <section>
+        <section id="hierarchical">
           <h2 className="text-2xl font-semibold mb-2">2. Hierarchical Clustering</h2>
           <p className="text-base">
             Hierarchical clustering builds a tree-like structure (dendrogram) to represent nested clusters. It can be agglomerative (bottom-up) or divisive (top-down).
@@ -59,7 +78,7 @@ export default function ClusteringGuide() {
           </ul>
         </section>
 
-        <section>
+        <section id="dbscan">
           <h2 className="text-2xl font-semibold mb-2">3. DBSCAN (Density-Based Spatial Clustering)</h2>
           <p className="text-base">
             DBSCAN groups points based on density, identifying clusters of high density and marking outliers as noise. It does not require specifying the number of clusters in advance.

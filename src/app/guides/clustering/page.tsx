@@ -1,67 +1,87 @@
+"use client";
+
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-// import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useState } from 'react'; // temp
+import { FaBars } from 'react-icons/fa'; // temp
 
 export default function ClusteringGuide() {
+  // temp block top
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  // temp block bottom
   return (
     <>
-      {/* <Head>
-        <title>Clustering Guide | Kevin Nguyễn</title>
-      </Head> */}
       <Navbar />
       <div className="flex">
-        {/* Sidebar */}
-        <aside className="w-64 bg-gray-100 p-4 sticky top-0 h-screen">
-        <h2 className="text-lg font-bold mb-4">Page Outline</h2>
+        {/* temp block top */}
+        {/* Hamburger Menu (Visible on Mobile) */}
+        <button
+          onClick={toggleSidebar}
+          className="lg:hidden fixed bottom-4 left-4 z-50 bg-gray-600 text-white p-2 rounded shadow focus:outline-none"
+        >
+          <FaBars size={20} />
+        </button>
+        <aside
+          className={`fixed lg:sticky top-0 h-screen w-64 bg-gray-100 p-4 z-40 transform ${
+            isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          } transition-transform duration-300 lg:translate-x-0`}
+        >
+        {/* temp block bottom */}
+        {/* <aside className="w-64 bg-gray-100 p-4 sticky top-0 h-screen"> */}
+        <h2 className="text-lg font-bold mb-4">Custering</h2>
           <ul className="space-y-2">
             <li>
-              <a href="#k-means" className="text-blue-600 hover:underline">
+              <a href="#k-means" className="text-gray-600 hover:underline">
                 K-Means Clustering
               </a>
               <ul className="pl-4 space-y-1">
                 <li>
-                  <a href="#k-means-how-it-works" className="text-blue-500 hover:underline">
+                  <a href="#k-means-how-it-works" className="text-gray-500 hover:underline">
                     How It Works
                   </a>
                 </li>
                 <li>
-                  <a href="#k-means-math" className="text-blue-500 hover:underline">
+                  <a href="#k-means-math" className="text-gray-500 hover:underline">
                     Mathematical Formulation
                   </a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="#hierarchical" className="text-blue-600 hover:underline">
+              <a href="#hierarchical" className="text-gray-600 hover:underline">
                 Hierarchical Clustering
               </a>
               <ul className="pl-4 space-y-1">
                 <li>
-                  <a href="#hierarchical-how-it-works" className="text-blue-500 hover:underline">
+                  <a href="#hierarchical-how-it-works" className="text-gray-500 hover:underline">
                     How It Works
                   </a>
                 </li>
                 <li>
-                  <a href="#hierarchical-math" className="text-blue-500 hover:underline">
+                  <a href="#hierarchical-math" className="text-gray-500 hover:underline">
                     Mathematical Formulation
                   </a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="#dbscan" className="text-blue-600 hover:underline">
+              <a href="#dbscan" className="text-gray-600 hover:underline">
                 DBSCAN
               </a>
               <ul className="pl-4 space-y-1">
                 <li>
-                  <a href="#dbscan-how-it-works" className="text-blue-500 hover:underline">
+                  <a href="#dbscan-how-it-works" className="text-gray-500 hover:underline">
                     How It Works
                   </a>
                 </li>
                 <li>
-                  <a href="#dbscan-math" className="text-blue-500 hover:underline">
+                  <a href="#dbscan-math" className="text-gray-500 hover:underline">
                     Mathematical Formulation
                   </a>
                 </li>
@@ -99,6 +119,13 @@ export default function ClusteringGuide() {
             The algorithm then iteratively assigns data points to their nearest cluster center (or <em>centroid</em>) by minimizing a pre-specified distance metric until convergence. 
             Examples of possible distance metrics used in partitional clustering include Euclidean distance, Manhattan distance, and cosine similarity.
           </p>
+          <div className="flex justify-center my-8">
+            <img
+              src="/clustering_plot.png"
+              alt="Clustering Plot"
+              className="rounded-lg shadow-lg max-w-md h-auto"
+            />
+          </div>
           <h3 id="k-means-how-it-works" className="text-xl font-bold mt-4">How It Works</h3>
           <ol className="list-decimal list-inside space-y-2">
             <li>Select a distance metric. (Euclidian, Manhattan, cosine similarity, etc.)</li>

@@ -8,8 +8,9 @@ import pandas as pd
 
 # %%
 
-df = load_iris(as_frame=True).frame
-X = df[['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']]
+X = load_iris().data
+
+#%%
 kmeans = KMeans(n_clusters=3)
 y_pred = kmeans.fit_predict(X)
 

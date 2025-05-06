@@ -147,14 +147,14 @@ export default function ClusteringGuide() {
           <h3 className="text-xl font-bold mt-4">Sample Python Code</h3>
             <SyntaxHighlighter language="python" style={vscDarkPlus} className="rounded-lg">
             {`from sklearn.cluster import KMeans
-import numpy as np
+from sklearn.datasets import load_iris
 
-# Sample data
-X = np.array([[1, 2], [1, 4], [1, 0],
-            [10, 2], [10, 4], [10, 0]])
+# Iris dataset
+X = load_iris().data
 
-# Initialize KMeans with 2 clusters
-kmeans = KMeans(n_clusters=2, random_state=0)
+# Initialize KMeans with 3 clusters 
+# Note: scikit-learn's implentation of K-means only supports Euclidian Distance
+kmeans = KMeans(n_clusters=3)
 
 # Fit the model
 kmeans.fit(X)

@@ -40,7 +40,7 @@ export default function ClusteringGuide() {
               </a>
               <ul className="pl-4 space-y-1">
                 <li>
-                  <a href="#k-means-how-it-works" className="text-gray-500 hover:underline">
+                  <a href="#partional-how-it-works" className="text-gray-500 hover:underline">
                     How It Works
                   </a>
                 </li>
@@ -93,11 +93,12 @@ export default function ClusteringGuide() {
           <p className="text-lg mb-4">
             Clustering is an <em>unsupervised</em> machine learning method that groups similar data points based on their features (i.e., the data).
             Clustering algorithms aim to find natural groupings within a dataset without any prior knowledge of the class labels.
-            It is widely used in applications like customer segmentation, anomaly detection, and image compression.
+            It is widely used in applications like customer segmentation, anomaly detection, and image compression. The three most common clustering algorithms are 
+            K-Means, Hierarchical, and DBSCAN.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <a href="#k-means" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                Learn about K-Means
+                Learn about K-Means Clustering
             </a>
             <a href="#hierarchical" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                 Learn about Hierarchical Clustering
@@ -109,12 +110,12 @@ export default function ClusteringGuide() {
         </section>
 
         <section id="k-means">
-          <h2 className="text-2xl font-semibold mb-2">1. Partitional Clustering (K-Means)</h2>
+          <h2 className="text-2xl font-semibold mb-2">1. K-Means</h2>
           <p className="text-base">
-            Partitional clustering divides a dataset into a predefined number of non-overlapping clusters. 
-            Partitional clustering algorithms, such as K-means, require a specified number of clusters (or k) beforehand. 
-            The algorithm then iteratively assigns data points to their nearest cluster center (or <em>centroid</em>) by minimizing a pre-specified distance metric until convergence. 
-            Examples of possible distance metrics used in partitional clustering include Euclidean distance, Manhattan distance, and cosine similarity.
+            Partitional clustering algorithms, like K-Means divide a dataset into a predefined number of non-overlapping clusters (or <em>k</em>).
+            The K-Means algorithm iteratively assigns data points to their nearest cluster 
+            center (or <em>centroid</em>) by minimizing a specified distance metric until convergence, usually Euclidian distance.
+            K-Medians is an similar partitional clustering algorithm that utilizes Manhattan distance. 
           </p>
           <div className="flex justify-center my-8">
             <img
@@ -125,11 +126,10 @@ export default function ClusteringGuide() {
           </div>
           <h3 id="k-means-how-it-works" className="text-xl font-bold mt-4">How It Works</h3>
           <ol className="list-decimal list-inside space-y-2">
-            <li>Select a distance metric. (Euclidian, Manhattan, cosine similarity, etc.)</li>
-            <li>Initialize <em>k</em> centroids randomly.</li>
-            <li>Assign each data point to the nearest centroid based on distance metric.</li>
+            <li>Randomly initialize <em>k</em> centroids.</li>
+            <li>Assign each data point to the nearest centroid based on distance metric (usually Euclidian).</li>
             <li>Recalculate centroids as the mean of all points in a cluster.</li>
-            <li>Repeat steps 3-4 until centroids stabilize or a maximum number of iterations is reached.</li>
+            <li>Repeat steps 2-3 until centroids stabilize or a maximum number of iterations is reached.</li>
           </ol>
           <h3 id="k-means-math" className="text-xl font-bold mt-4">Mathematical Formulation</h3>
           <p className="text-base">
@@ -159,9 +159,6 @@ kmeans.fit(X)
 print("Cluster Centers:", kmeans.cluster_centers_)
 print("Labels:", kmeans.labels_)`}
             </SyntaxHighlighter>
-            <p className="text-sm text-gray-600">
-            Note: scikit-learn's implementation of K-Means only supports Euclidian distance.
-          </p>
         </section>
 
         <section id="hierarchical">

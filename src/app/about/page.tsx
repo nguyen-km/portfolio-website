@@ -66,7 +66,7 @@ export default function AboutPage() {
             <div>
                 <h3 className="text-xl font-bold text-sky-200">Chipotle Mexican Grill, Inc.</h3>
                 <p className="text-sky-100 text-base">Data Engineering Intern</p>
-                <p className="text-neutral-400 text-sm">Worked on national-scale marketing analytics and ETL optimization. Streamlined data delivery for the "Buy the Dip" campaign, supported internal teams with Microsoft SQL Server and Snowflake, and refactored over 70 SSIS packages to improve pipeline reliability and performance.</p>
+                <p className="text-neutral-400 text-sm">Worked on national-scale marketing analytics and ETL optimization. Streamlined data delivery for the &quot;Buy the Dip&quot; campaign, supported internal teams with Microsoft SQL Server and Snowflake, and refactored over 70 SSIS packages to improve pipeline reliability and performance.</p>
             </div>
             <div>
                 <h3 className="text-xl font-bold text-sky-200">White House Council of Economic Advisers</h3>

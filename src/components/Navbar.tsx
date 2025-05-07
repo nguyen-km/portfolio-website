@@ -22,11 +22,7 @@ export default function Navbar() {
         {/* Page links */}
         <div className="flex flex-wrap justify-center sm:justify-end items-center gap-4 text-gray-700 text-base">
           <Link href="/" className="hover:text-blue-600">Home</Link>
-          <div
-            className="relative group"
-            onMouseEnter={() => setIsDropdownOpen(true)} // Open on hover (desktop)
-            onMouseLeave={() => setIsDropdownOpen(false)} // Close on hover out (desktop)
-          >
+          <div className="relative group" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)} >
             <button
               onClick={toggleDropdown} // Toggle on click (mobile)
               className="hover:text-blue-600"

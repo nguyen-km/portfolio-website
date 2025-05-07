@@ -18,8 +18,7 @@ export default function ClusteringGuide() {
   return (
     <>
       <Navbar />
-      <div className="flex">
-        {/* temp block top */}
+      <div className="flex min-h-screen">
         {/* Hamburger Menu (Visible on Mobile) */}
         <button
           onClick={toggleSidebar}
@@ -32,9 +31,8 @@ export default function ClusteringGuide() {
             isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
           } transition-transform duration-300 lg:translate-x-0`}
         >
-        {/* temp block bottom */}
         {/* <aside className="w-64 bg-gray-100 p-4 sticky top-0 h-screen"> */}
-        <h2 className="text-lg font-bold mb-4">Custering</h2>
+        <h2 className="text-lg font-bold mb-4 text-black">Clustering</h2>
           <ul className="space-y-2">
             <li>
               <a href="#k-means" className="text-gray-600 hover:underline">
@@ -89,14 +87,13 @@ export default function ClusteringGuide() {
             </li>
           </ul>
         </aside>
-      <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <main className="min-w-0 max-w-4xl mx-auto px-4 py-8 space-y-8">
         <section>
           <h1 className="text-3xl font-bold mb-4">Clustering in Machine Learning</h1>
           <p className="text-lg mb-4">
             Clustering is an <em>unsupervised</em> machine learning method that groups similar data points based on their features (i.e., the data).
             Clustering algorithms aim to find natural groupings within a dataset without any prior knowledge of the class labels.
-            It is widely used in applications like customer segmentation, anomaly detection, and image compression. 
-            The three most common clustering algorithms are K-means, hierarchical clustering, and DBSCAN.
+            It is widely used in applications like customer segmentation, anomaly detection, and image compression.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <a href="#k-means" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -123,7 +120,7 @@ export default function ClusteringGuide() {
             <img
               src="/clustering_plot.png"
               alt="Clustering Plot"
-              className="rounded-lg shadow-lg max-w-md h-auto"
+              className="rounded-lg shadow-lg w-full max-w-md h-auto"
             />
           </div>
           <h3 id="k-means-how-it-works" className="text-xl font-bold mt-4">How It Works</h3>
@@ -153,7 +150,6 @@ from sklearn.datasets import load_iris
 X = load_iris().data
 
 # Initialize KMeans with 3 clusters 
-# Note: scikit-learn's implentation of K-means only supports Euclidian Distance
 kmeans = KMeans(n_clusters=3)
 
 # Fit the model
@@ -163,6 +159,9 @@ kmeans.fit(X)
 print("Cluster Centers:", kmeans.cluster_centers_)
 print("Labels:", kmeans.labels_)`}
             </SyntaxHighlighter>
+            <p className="text-sm text-gray-600">
+            Note: scikit-learn's implementation of K-Means only supports Euclidian distance.
+          </p>
         </section>
 
         <section id="hierarchical">

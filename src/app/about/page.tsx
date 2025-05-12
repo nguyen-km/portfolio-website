@@ -8,7 +8,7 @@ export default function AboutPage() {
       <main className="max-w-3xl mx-auto px-4 py-8 space-y-8">
         <section>
             <h1 className="text-3xl font-bold mb-4 text-sky-200">Hi, I&apos;m Kevin</h1>
-            <p className="text-lg">I&apos;m a data analyst at BBC Research & Consulting, where I develop Bayesian models and data infrastructure to support equity-focused public contracting. My work informs policy decisions and helps agencies design business inclusion programs that are both impactful and legally defensible.</p>
+            <p className="text-lg">Welcome to my website! I&apos;m a data analyst at BBC Research & Consulting, where I develop Bayesian models and data infrastructure to support equity-focused public contracting. My work informs policy decisions and helps agencies design business inclusion programs that are both impactful and legally defensible.</p>
         </section>
 
         <section>

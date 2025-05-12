@@ -10,8 +10,11 @@ export default function Home() {
           <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-4">
             Kevin Minh Nguyễn
           </h1>
+          <h2 className="text-xl sm:text-2xl text-gray-700 mb-4">
+            Data Scientist & Policy Researcher
+          </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto">
-            Data scientist and policy researcher at BBC Research & Consulting. I specialize in Bayesian modeling, public-sector analytics, and building tools that make data more actionable.
+          I use Bayesian modeling, statistical inference, and custom-built analytics tools to help public-sector clients design smarter, more equitable policy.
           </p>
         </div>
       </main>

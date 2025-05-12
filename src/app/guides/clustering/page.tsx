@@ -91,7 +91,13 @@ export default function ClusteringGuide() {
         <section>
           <h1 className="text-3xl font-bold mb-4">Clustering in Machine Learning</h1>
           <p className="text-lg mb-4">
-            Clustering is an <em>unsupervised</em> machine learning method that groups similar data points based on their features (i.e., the data).
+            Clustering is an{' '}
+            <span className="relative group cursor-help inline-block">
+              <em><u>unsupervised</u></em>
+              <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-64 text-xs text-white bg-black px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 select-none pointer-events-none">
+              A type of machine learning where the algorithm finds patterns or groupings in data without using labeled examples.
+              </span>
+            </span>{' '}machine learning method that groups similar data points based on their features (i.e., the data).
             Clustering algorithms aim to find natural groupings within a dataset without any prior knowledge of the class labels.
             It is widely used in applications like customer segmentation, anomaly detection, and image compression. The three most common clustering algorithms are 
             K-Means, Hierarchical, and DBSCAN.
@@ -114,7 +120,7 @@ export default function ClusteringGuide() {
           <p className="text-base">
             Partitional clustering algorithms, like K-Means divide a dataset into a predefined number of non-overlapping clusters (or <em>k</em>).
             The K-Means algorithm iteratively assigns data points to their nearest cluster 
-            center (or <em>centroid</em>) by minimizing a specified distance metric until convergence, usually Euclidian distance.
+            center (or <em>centroid</em>) by minimizing a specified distance metric until convergence&#59; usually Euclidian distance.
             K-Medians is an similar partitional clustering algorithm that utilizes Manhattan distance. 
           </p>
           <div className="flex justify-center my-8">

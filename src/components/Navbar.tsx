@@ -15,13 +15,13 @@ export default function Navbar() {
     <header className="w-full bg-white border-b shadow-sm">
       <nav className="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
         {/* Site title */}
-        <div className="text-2xl font-bold text-gray-900 text-center sm:text-left">
+        <Link href="/" className="text-2xl font-bold text-gray-900 text-center sm:text-left hover:text-blue-600">
           Kevin Nguyễn
-        </div>
+        </Link>
+
 
         {/* Page links */}
         <div className="flex flex-wrap justify-center sm:justify-end items-center gap-4 text-gray-700 text-base">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
           <div className="relative group" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)} >
             <button
               onClick={toggleDropdown} // Toggle on click (mobile)

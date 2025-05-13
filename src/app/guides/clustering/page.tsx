@@ -49,6 +49,11 @@ export default function ClusteringGuide() {
                     Mathematical Formulation
                   </a>
                 </li>
+                <li>
+                  <a href="#k-means-hyperparameter" className="text-gray-500 hover:underline">
+                    Hyperparameter Tuning
+                  </a>
+                </li>
               </ul>
             </li>
             <li>
@@ -118,7 +123,7 @@ export default function ClusteringGuide() {
         <section id="k-means">
           <h2 className="text-2xl font-semibold mb-2">1. K-Means</h2>
           <p className="text-base">
-            Partitional clustering algorithms, like K-Means divide a dataset into a predefined number of non-overlapping clusters (or <em>k</em>).
+            Partitional clustering algorithms, like K-Means, divide a dataset into a predefined number (or <em>k</em>) of non-overlapping clusters.
             The K-Means algorithm iteratively assigns data points to their nearest cluster 
             center (or <em>centroid</em>) by minimizing a specified distance metric until convergence&#59; usually Euclidian distance.
             K-Medians is an similar partitional clustering algorithm that utilizes Manhattan distance. 
@@ -147,6 +152,24 @@ export default function ClusteringGuide() {
           <p className="text-sm text-gray-600">
             where <em>xᵢ</em> is a data point, <em>μⱼ</em> is the centroid of cluster <em>j</em>, and || || denotes the Euclidean distance.
           </p>
+          
+            <h3 id="k-means-hyperparameter" className="text-xl font-bold mt-4">Hyperparameter tuning</h3>
+            <p className="text-base">
+            As previously mentioned, K-Means clustering requires the number of clusters (<em>k</em>) to be specified prior to running the algorithm.
+            While <em>k</em> is often informed by some prior theory regarding the underlying data, it can also be treated as a hyperparameter that
+            needs to be tuned. A simple method to determine an "optimal" k is to run the algorithm multiple times with varying k. The WCSS monotonically decreases
+            as k increases, meaning that selecting k with the smallest WCSS is an insufficient solution. Researchers often plot the WCSS, also called <em>intertia</em>,
+            for each potential k and select the k where the marginal decrease in inertia reaches an inflection point. This is called the "elbow method". The following plot 
+            demonstrates the elbow method for the Iris dataset. 
+            </p>
+            <div className="flex justify-center my-8">
+            <img
+              src="/elbow_method.png"
+              alt="Elbow Method"
+              className="rounded-lg shadow-lg w-full max-w-md h-auto"
+            />
+
+          </div>
           <h3 className="text-xl font-bold mt-4">Sample Python Code</h3>
             <SyntaxHighlighter language="python" style={vscDarkPlus} className="rounded-lg">
             {`from sklearn.cluster import KMeans

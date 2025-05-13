@@ -157,9 +157,9 @@ export default function ClusteringGuide() {
             <p className="text-base">
             As previously mentioned, K-Means clustering requires the number of clusters (<em>k</em>) to be specified prior to running the algorithm.
             While <em>k</em> is often informed by some prior theory regarding the underlying data, it can also be treated as a hyperparameter that
-            needs to be tuned. A simple method to determine an "optimal" k is to run the algorithm multiple times with varying k. The WCSS monotonically decreases
+            needs to be tuned. A simple method to determine an &quot;optimal&quot; k is to run the algorithm multiple times with varying k. The WCSS monotonically decreases
             as k increases, meaning that selecting k with the smallest WCSS is an insufficient solution. Researchers often plot the WCSS, also called <em>intertia</em>,
-            for each potential k and select the k where the marginal decrease in inertia reaches an inflection point. This is called the "elbow method". The following plot 
+            for each potential k and select the k where the marginal decrease in inertia reaches an inflection point. This is called the &quot;elbow method&quot;. The following plot 
             demonstrates the elbow method for the Iris dataset. 
             </p>
             <div className="flex justify-center my-8">
